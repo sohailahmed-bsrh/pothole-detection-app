@@ -12,7 +12,7 @@
 
 Municipal road maintenance relies heavily on delayed citizen complaints, resulting in hazardous road conditions, infrastructure decay, and vehicle damage.
 
-This project provides an end-to-end, reproducible implementation engineered to solve this challenge through verified data transformations, robust algorithms, and production-ready architecture.
+This project provides an end-to-end, reproducible implementation engineered to solve this challenge through verified data transformations, reliable algorithms, and production-ready architecture.
 
 ---
 
