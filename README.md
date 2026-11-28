@@ -1,191 +1,118 @@
 <div align="center">
 
-<h1>Road Hazard & Pothole Detection System</h1>
+# 🛣️ AI Road Pothole Detection System
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=800&size=22&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&width=800&lines=Real-Time+Road+Safety+Object+Detection;YOLOv8+Computer+Vision+Inference;Interactive+Streamlit+Evaluation+Interface;Quantitative+Precision-Recall+Validation" alt="Typing Header" />
+### Intelligent Road Damage Detection using YOLOv8, FastAPI, and React (No-Node)
 
-<p><strong>Deep Learning Computer Vision System for Automated Road Surface Defect Detection</strong></p>
+<p align="center">
 
-<p>
-  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=python,pytorch,opencv,streamlit,github&theme=dark" alt="Skills" /></a>
+An AI-powered Computer Vision application that automatically detects road potholes from images and videos using the YOLOv8 object detection model and provides a stunning, modern web interface built with React and FastAPI.
+
 </p>
 
-<p>
-  <a href="#overview">Overview</a> &bull;
-  <a href="#purpose--problem-statement">Purpose</a> &bull;
-  <a href="#real-world-industry-applications">Use Cases</a> &bull;
-  <a href="#step-by-step-engineering-walkthrough">How It Was Built</a> &bull;
-  <a href="#system-architecture">Architecture</a> &bull;
-  <a href="#visual-showcase-gallery">Visual Gallery</a> &bull;
-  <a href="#technology-stack-matrix">Tech Stack</a> &bull;
-  <a href="#installation--setup">Installation</a> &bull;
-  <a href="#author--contact-information">Author</a>
+<p align="center">
+
+<img src="https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react"/>
+
+<img src="https://img.shields.io/badge/FastAPI-0.104-green?style=for-the-badge&logo=fastapi"/>
+
+<img src="https://img.shields.io/badge/YOLOv8-Ultralytics-red?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-green?style=for-the-badge"/>
+
 </p>
 
 </div>
 
 ---
-## Overview
 
-The Road Hazard & Pothole Detection System implements state-of-the-art computer vision to identify, localize, and classify road surface degradation in real time. Powered by an Ultralytics YOLOv8 convolutional architecture trained on domain-specific roadway imagery, the system provides high mean Average Precision (mAP) under varying weather, camera resolutions, and illumination conditions.
+# 📖 **Project Overview**
 
----
+Road potholes are one of the major causes of traffic accidents, vehicle damage, and increased road maintenance costs. Manual road inspection is time-consuming, expensive, and often inefficient.
 
-## Purpose & Problem Statement
-
-### The Problem
-Manual roadway defect inspection by municipal road maintenance departments is slow, costly, and hazardous. Undetected road potholes cause thousands of vehicular accidents, vehicle suspension damage, and transport delays annually. Traditional road maintenance relies on reactive citizen complaints rather than proactive automated road auditing.
-
-### The Engineering Purpose
-To build an automated, mobile-deployable computer vision application that can be mounted on road inspection vehicles or smartphones to detect, mark bounding boxes, and log GPS/video coordinates of potholes with low inference latency and high empirical recall.
+This project presents a next-generation AI-powered Road Pothole Detection System that automatically detects potholes from road images and videos using the YOLOv8 object detection model. The application features a robust FastAPI backend for high-performance ML inference, paired with a stunning React frontend boasting a premium dark-mode, glassmorphism design.
 
 ---
 
-## Real-World Industry Applications
+# **✨ Features**
 
-- **Municipal Highway & Infrastructure Auditing**: Automated continuous auditing of city streets by public works vehicles to generate prioritized maintenance repair logs.
-- **Autonomous Vehicle Safety Subsystems**: Dynamic road condition perception feeding live braking or obstacle avoidance data to autonomous driving systems.
-- **Logistics & Fleet Management**: Delivery fleet dashcams flagging damaged transport routes to reduce vehicle maintenance downtime and tire blowouts.
-- **Insurance Telematics**: Verifying road condition risk factors during automotive collision investigations.
-
----
-
-## Step-by-Step Engineering Walkthrough (How It Was Built)
-
-### Step 1: Road Surface Dataset Compilation & Preprocessing
-A multi-class roadway dataset was assembled containing asphalt fractures, potholes, manhole covers, and road cracks across diverse weather conditions (dry, wet, shadowed). Images were normalized, annotated with standard YOLO format bounding boxes, and augmented (horizontal flips, brightness jittering, scaling).
-
-### Step 2: YOLOv8 Backbone & Feature Pyramid Network
-The Ultralytics YOLOv8 architecture was fine-tuned for small-to-medium object localization. The model combines a modified CSPDarknet53 convolutional backbone with a Path Aggregation Network (PANet) neck to preserve spatial resolution across multiple scale heads.
-
-### Step 3: Model Training & Hyperparameter Tuning
-Training was conducted across 50 epochs utilizing Stochastic Gradient Descent (SGD) with cosine learning rate decay, mosaic augmentation, and multi-scale batch sampling. Hyperparameters were tuned to minimize localization box loss (`box_loss`) and classification loss (`cls_loss`).
-
-### Step 4: Empirical Evaluation & Metric Validation
-Validation models were evaluated against an isolated test split. The precision-recall curve achieved balanced performance with an mAP50 of 0.88+ and low false discovery rates under complex shadowy environments.
-
-### Step 5: Real-Time Streamlit Interface Deployment
-A lightweight, interactive Streamlit application was built to allow highway engineers to drag-and-drop video feeds or dashcam footage, dynamically adjust confidence thresholds and IoU overlap sliders, and export detection coordinates to CSV.
+- 🚀 **AI-powered detection**: Uses YOLOv8 for fast and accurate road pothole detection.
+- 📤 **Drag & Drop Upload**: Upload road images and videos through an interactive web interface.
+- 🧠 **Automatic object detection**: Bounding boxes are drawn automatically.
+- 📊 **Metrics Dashboard**: Displays total detected potholes and average detection confidence.
+- ⚡ **FastAPI Backend**: Robust backend architecture for serving ML models in production.
+- 🌐 **Modern React Application**: Stunning UI built using React directly in the browser via CDN (No Node.js required!).
+- 📥 **Download Results**: Easily download the processed images and videos.
 
 ---
 
-## System Architecture
+# **🛠️ Technologies Used**
 
-```mermaid
-flowchart TD
-    A[Roadway Video / Still Image Stream] --> B[Frame Extraction & Resolution Standardization]
-    B --> C[YOLOv8 Feature Extraction Backbone]
-    C --> D[Path Aggregation Feature Pyramid Network]
-    D --> E[Multi-Scale Object Bounding Box Heads]
-    E --> F[Non-Maximum Suppression Filtering]
-    F --> G[Annotated Output Frames & Defect Coordinates]
-    G --> H[Streamlit UI Display & CSV Incident Export]
+| Category | Technology |
+|-----------|------------|
+| Frontend Web Framework | React (via CDN) |
+| Backend API | FastAPI |
+| Deep Learning Framework | Ultralytics YOLOv8 |
+| Computer Vision | OpenCV |
+| Machine Learning | NumPy |
+
+---
+
+# **📂 Project Structure**
+
+```text
+Road-Pothole-Detection-System/
+│
+├── backend/
+│   ├── main.py (FastAPI application)
+│   ├── requirements.txt
+│   └── static/
+│       ├── index.html (React Frontend)
+│       └── style.css
+│
+├── best.pt (YOLOv8 Model Weights)
+└── README.md
 ```
 
 ---
 
-## Visual Showcase Gallery
+# **🚀 Installation and Setup**
 
-<table width="100%" align="center">
-  <tr>
-    <td width="50%" align="center"><b>Streamlit Inference Dashboard</b><br><sub>Real-time media upload and confidence parameter adjustment.</sub></td>
-    <td width="50%" align="center"><b>Urban Pothole Identification</b><br><sub>Bounding box localization on high-resolution road imagery.</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screen_shot/home.png" alt="Home Dashboard" width="460"/></td>
-    <td align="center"><img src="screen_shot/detect_1.png" alt="Detection 1" width="460"/></td>
-  </tr>
-  <tr>
-    <td width="50%" align="center"><b>Complex Road Surface Defect</b><br><sub>Multi-hazard detection with localized bounding boxes.</sub></td>
-    <td width="50%" align="center"><b>Deep Asphalt Fracture Detection</b><br><sub>High-confidence localization under direct sunlight.</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screen_shot/detect_2.png" alt="Detection 2" width="460"/></td>
-    <td align="center"><img src="screen_shot/detect_3.png" alt="Detection 3" width="460"/></td>
-  </tr>
-  <tr>
-    <td width="50%" align="center"><b>Multiple Hazard Cluster</b><br><sub>Simultaneous tracking of closely grouped surface fractures.</sub></td>
-    <td width="50%" align="center"><b>Model Training Metrics Overview</b><br><sub>Training and validation loss across convolutional epochs.</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screen_shot/detect_4.png" alt="Detection 4" width="460"/></td>
-    <td align="center"><img src="screen_shot/detect_matrics.png" alt="Metrics Overview" width="460"/></td>
-  </tr>
-  <tr>
-    <td width="50%" align="center"><b>Precision-Recall Curve</b><br><sub>Validation curve demonstrating high precision at optimal IoU.</sub></td>
-    <td width="50%" align="center"><b>Final Model Training Evaluation</b><br><sub>Convergence trajectory of bounding box loss functions.</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screen_shot/precision.png" alt="Precision Curve" width="460"/></td>
-    <td align="center"><img src="screen_shot/model_training.png" alt="Model Training" width="460"/></td>
-  </tr>
-  <tr>
-    <td width="50%" align="center"><b>Final Evaluation Metric Analysis</b><br><sub>mAP50 and mAP50-95 quantitative evaluation benchmarks.</sub></td>
-    <td width="50%" align="center"><b>Last Training Epoch Diagnostics</b><br><sub>Finalized weight parameter performance logs.</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screen_shot/evaluation_metric.png" alt="Evaluation Metric" width="460"/></td>
-    <td align="center"><img src="screen_shot/model%20training%20last.png" alt="Training Last" width="460"/></td>
-  </tr>
-  <tr>
-    <td width="50%" align="center"><b>Comprehensive Performance Summary</b><br><sub>Aggregated validation statistics and confusion matrix overview.</sub></td>
-    <td width="50%" align="center"><b>Final Metric Verification Table</b><br><sub>Tabular benchmark across testing split samples.</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screen_shot/summary.png" alt="Summary Table" width="460"/></td>
-    <td align="center"><img src="screen_shot/evaluation_last.png" alt="Evaluation Last" width="460"/></td>
-  </tr>
-</table>
+Because this project uses a CDN-based React setup, **you do not need to install Node.js or `npm`**. The entire application (both the ML backend and the React web UI) runs from a single Python command!
 
----
-
-## Technology Stack Matrix
-
-| Layer | Technologies | Version / Role | Engineering Purpose |
-| :--- | :--- | :--- | :--- |
-| Deep Learning Model | Ultralytics YOLOv8 | 8.0+ | Object detection backbone, neck, and bounding box heads |
-| Framework Runtime | PyTorch | 2.1+ | Tensor computations and GPU acceleration |
-| Computer Vision | OpenCV | 4.8+ | Frame reading, spatial scaling, and bounding box drawing |
-| Web Application | Streamlit | 1.28+ | Real-time reactive inference UI and parameter sliders |
-| Scientific Computing | NumPy, Pandas | Latest | Detection array slicing and incident CSV logging |
-| Diagnostics | Matplotlib, Seaborn | Latest | Precision-recall curves and training loss plots |
-
----
-
-## Installation & Setup
+### **1. Clone the Repository**
 
 ```bash
-# Clone the repository
-git clone https://github.com/sohailahmed-bsrh/pothole-detection-app.git
-cd pothole-detection-app
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Launch detection application
-streamlit run app.py
+git clone https://github.com/sohail-ahmed-26/Pothole_Detection_App.git
+cd Pothole_Detection_App
 ```
+
+### **2. Setup and Run the App**
+
+Open a terminal and navigate to the backend folder:
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+```
+
+### **3. View the App**
+Open your web browser and go to:
+👉 **http://localhost:8000**
+
+You will instantly see the React application!
+
 ---
 
-## Author & Contact Information
+# **👨‍💻 Author**
 
-<table width="100%">
-  <tr>
-    <td width="150" align="center" valign="middle">
-      <img src="https://avatars.githubusercontent.com/u/231165170?v=4" width="120" style="border-radius: 50%;" alt="Sohail Ahmed"/>
-    </td>
-    <td>
-      <h3>Sohail Ahmed</h3>
-      <p><strong>Senior Software Engineer & AI Systems Architect</strong></p>
-      <p>Specializing in Full-Stack AI Application Development, Computer Vision, Deep Learning Pipelines, and Scalable Automation Architectures.</p>
-      <p>
-        <a href="https://sohail.devsil.com"><strong>Portfolio Website</strong></a> | 
-        <a href="https://github.com/sohailahmed-bsrh"><strong>GitHub Profile</strong></a> | 
-        <a href="https://www.linkedin.com/in/sohail-ahmed-devsil/"><strong>LinkedIn</strong></a> | 
-        <a href="https://www.kaggle.com/sohail2411126"><strong>Kaggle</strong></a> | 
-        <a href="https://x.com/ahmed241126"><strong>Twitter/X</strong></a> | 
-        <a href="mailto:se906403@gmail.com"><strong>Email Contact</strong></a>
-      </p>
-    </td>
-  </tr>
-</table>
+## **Sohail Ahmed**
+**AI Engineer | Data Scientist | Computer Vision Enthusiast**
+
+📧 Email: nextgenaihub.com@gmail.com
+🔗 LinkedIn: https://www.linkedin.com/in/sohail-ahmed-devsil
+🐙 GitHub: https://github.com/sohail-ahmed-26
+🌐 Portfolio: https://sohail.devsil.com
+
+*"Turning ideas into intelligent solutions through Artificial Intelligence."*
